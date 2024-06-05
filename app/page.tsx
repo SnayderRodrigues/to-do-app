@@ -3,8 +3,8 @@ import Main from "../components/Main";
 
 export default function Home() {
   return (
-    <main className="flex items-center justify-center relative bg-black-100 overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="flex items-center justify-between max-w-7xl w-full">
+    <main className="flex flex-col items-center justify-center relative overflow-hidden mx-auto">
+      <div className="flex items-center justify-between w-full">
         <Sidebar />
         <Main />
       </div>
