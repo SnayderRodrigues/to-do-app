@@ -11,10 +11,12 @@ import {
   CommandShortcut,
 } from "./ui/command";
 import { ModeToggle } from "./ModeToggle";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col items-start gap-8 w-[20%] p-5">
+    <div className="flex flex-col items-start gap-8 w-[400px] h-full p-5">
       <span className="text-4xl font-bold">To-Do App</span>
       <ModeToggle />
       <Command>
@@ -22,15 +24,21 @@ const Sidebar = () => {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
-            <CommandItem>Calendar</CommandItem>
-            <CommandItem>Search Emoji</CommandItem>
-            <CommandItem>Calculator</CommandItem>
+            <CommandItem>All Tasks</CommandItem>
+            <CommandItem>Starred</CommandItem>
+            <CommandItem>Completed</CommandItem>
+            <CommandItem>Archieved</CommandItem>
+            <CommandItem>Excluded</CommandItem>
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Settings">
-            <CommandItem>Profile</CommandItem>
-            <CommandItem>Billing</CommandItem>
-            <CommandItem>Settings</CommandItem>
+            <CommandItem className="flex items-center justify-start gap-4 p-4">
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              Profile
+            </CommandItem>
           </CommandGroup>
         </CommandList>
       </Command>
