@@ -12,12 +12,13 @@ import {
 } from "./ui/command";
 import { ModeToggle } from "./ModeToggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { IoMdSettings, IoMdPerson } from "react-icons/io";
 
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col items-start gap-8 w-[400px] h-full p-5">
-      <span className="text-4xl font-bold">To-Do App</span>
+    <div className="flex flex-col items-start gap-8 w-[400px] h-[100vh] p-5">
+      <span className="text-4xl font-bold">To-Do List App</span>
       <ModeToggle />
       <Command>
         <CommandInput placeholder="Type a command or search..." />
@@ -32,12 +33,17 @@ const Sidebar = () => {
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Settings">
-            <CommandItem className="flex items-center justify-start gap-4 p-4">
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
+            <CommandItem className="flex items-center justify-start gap-4 p-4 justify">
+              <Avatar className="flex items-center justify-center">
+                <IoMdPerson className="text-2xl" />
               </Avatar>
               Profile
+            </CommandItem>
+            <CommandItem className="flex items-center justify-start gap-4 p-4 justify">
+              <Avatar className="flex items-center justify-center">
+                <IoMdSettings className="text-2xl" />
+              </Avatar>
+              Settings
             </CommandItem>
           </CommandGroup>
         </CommandList>
